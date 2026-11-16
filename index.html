@@ -13,30 +13,45 @@
             padding: 20px;
             margin: 0;
         }
-        h1 { color: #00ffcc; margin-bottom: 5px; }
-        p { color: #aaaaaa; margin-bottom: 25px; }
+        h1 { color: #00ffcc; margin-bottom: 5px; letter-spacing: 1px; }
+        p { color: #aaaaaa; margin-bottom: 20px; font-size: 14px; }
+        .search-box {
+            width: 90%;
+            max-width: 420px;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background-color: #1e1e1e;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-box:focus { border-color: #00ffcc; }
         .app-card {
             background: #1e1e1e;
             border: 1px solid #333;
             border-radius: 10px;
-            padding: 16px;
+            padding: 16px 18px;
             margin: 12px auto;
             max-width: 420px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: border-color 0.2s;
         }
+        .app-card:hover { border-color: #00ffcc; }
         .app-info { text-align: left; }
-        .app-name { font-size: 18px; font-weight: bold; }
-        .app-version { font-size: 13px; color: #888; margin-top: 4px; }
+        .app-name { font-size: 17px; font-weight: bold; letter-spacing: 0.5px; }
         .btn-download {
             background-color: #00ffcc;
             color: #000000;
-            padding: 12px 18px;
+            padding: 10px 16px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 6px;
             font-size: 14px;
+            white-space: nowrap;
         }
         .btn-download:hover { background-color: #00ccaa; }
     </style>
@@ -44,18 +59,104 @@
 <body>
 
     <h1>CIVITA STORE</h1>
-    <p>Haz clic en descargar para instalar</p>
+    <p>Selecciona una aplicación para descargar</p>
 
-    <!-- APP 1 -->
-    <div class="app-card">
-        <div class="app-info">
-            <div class="app-name">Saltamontes</div>
-            <div class="app-version">Versión 1.0.0</div>
+    <input type="text" id="buscador" class="search-box" onkeyup="filtrarApps()" placeholder="Buscar aplicación...">
+
+    <div id="lista-apps">
+
+        <!-- 1. SALTAMONTES -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">SALTAMONTES</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.0/SALTAMONTES.apk" class="btn-download">Descargar</a>
         </div>
-        <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.0/SALTAMONTES.apk" class="btn-download">Descargar</a>
+
+        <!-- 2. XUPER -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">XUPER</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/v1/0.XUPER.AR.SIN.CUENTA.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 3. PLAYTV PREMIUM -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">PLAYTV PREMIUM</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0/1.PLAY.TV.PREMIUM.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 4. PUNTO PLAY -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">PUNTO PLAY</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.1/1.PUNTO.PLAY.CANALES.Y.PACK.FUTBOL.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 5. XTREME TV -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">XTREME TV</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/1.6/XTREMETV.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 6. APP EVENTOS -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">APP EVENTOS</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.1/APP.EVENTOS.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 7. MAGLINK TV -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">MAGLINK TV</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/1.3/MAGLINKTV.CANALES.Y.EVENTOS.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 8. FLAMA TV -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">FLAMA TV</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/1%2C2/FLAMA.TV.CANALES.Y.EVENTOS.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 9. STREAMFLIX -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">STREAMFLIX</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/1.5/STREAMFLIX.apk" class="btn-download">Descargar</a>
+        </div>
+
+        <!-- 10. SMARTUBE -->
+        <div class="app-card">
+            <div class="app-info">
+                <div class="app-name">SMARTUBE</div>
+            </div>
+            <a href="https://github.com/civitastore/aplicaciones/releases/download/1.4/SMART.TUBE.apk" class="btn-download">Descargar</a>
+        </div>
+
     </div>
 
-    <!-- Para agregar más apps, copia y pega este bloque desde <div class="app-card"> hasta </div> -->
+    <script>
+        function filtrarApps() {
+            let input = document.getElementById('buscador').value.toLowerCase();
+            let cards = document.getElementsByClassName('app-card');
+            for (let i = 0; i < cards.length; i++) {
+                let nombre = cards[i].querySelector('.app-name').innerText.toLowerCase();
+                cards[i].style.display = nombre.includes(input) ? "flex" : "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
