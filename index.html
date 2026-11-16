@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civita Store - Apps</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 { color: #00ffcc; margin-bottom: 5px; }
+        p { color: #aaaaaa; margin-bottom: 25px; }
+        .app-card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px auto;
+            max-width: 420px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .app-info { text-align: left; }
+        .app-name { font-size: 18px; font-weight: bold; }
+        .app-version { font-size: 13px; color: #888; margin-top: 4px; }
+        .btn-download {
+            background-color: #00ffcc;
+            color: #000000;
+            padding: 12px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .btn-download:hover { background-color: #00ccaa; }
+    </style>
+</head>
+<body>
+
+    <h1>CIVITA STORE</h1>
+    <p>Haz clic en descargar para instalar</p>
+
+    <!-- APP 1 -->
+    <div class="app-card">
+        <div class="app-info">
+            <div class="app-name">Saltamontes</div>
+            <div class="app-version">Versión 1.0.0</div>
+        </div>
+        <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.0/SALTAMONTES.apk" class="btn-download">Descargar</a>
+    </div>
+
+    <!-- Para agregar más apps, copia y pega este bloque desde <div class="app-card"> hasta </div> -->
+
+</body>
+</html>
