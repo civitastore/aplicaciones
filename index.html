@@ -17,9 +17,9 @@
         p { color: #aaaaaa; margin-bottom: 20px; font-size: 14px; }
         .search-box {
             width: 90%;
-            max-width: 420px;
+            max-width: 500px;
             padding: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-radius: 8px;
             border: 1px solid #333;
             background-color: #1e1e1e;
@@ -28,30 +28,59 @@
             outline: none;
         }
         .search-box:focus { border-color: #00ffcc; }
+
+        /* Contenedor en cuadrícula de 3 columnas */
+        #lista-apps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Adaptación automática para pantallas chicas (celulares) */
+        @media (max-width: 700px) {
+            #lista-apps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 450px) {
+            #lista-apps {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .app-card {
             background: #1e1e1e;
             border: 1px solid #333;
             border-radius: 10px;
-            padding: 16px 18px;
-            margin: 12px auto;
-            max-width: 420px;
+            padding: 20px 15px;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            transition: border-color 0.2s;
+            gap: 15px;
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .app-card:hover { border-color: #00ffcc; }
-        .app-info { text-align: left; }
-        .app-name { font-size: 17px; font-weight: bold; letter-spacing: 0.5px; }
+        .app-card:hover { 
+            border-color: #00ffcc;
+            transform: translateY(-2px);
+        }
+        .app-name { 
+            font-size: 17px; 
+            font-weight: bold; 
+            letter-spacing: 0.5px; 
+        }
         .btn-download {
             background-color: #00ffcc;
             color: #000000;
-            padding: 10px 16px;
+            padding: 10px 20px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 6px;
             font-size: 14px;
-            white-space: nowrap;
+            width: 80%;
+            max-width: 160px;
         }
         .btn-download:hover { background-color: #00ccaa; }
     </style>
@@ -67,81 +96,61 @@
 
         <!-- 1. SALTAMONTES -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">SALTAMONTES</div>
-            </div>
+            <div class="app-name">SALTAMONTES</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.0/SALTAMONTES.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 2. XUPER -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">XUPER</div>
-            </div>
+            <div class="app-name">XUPER</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/v1/0.XUPER.AR.SIN.CUENTA.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 3. PLAYTV PREMIUM -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">PLAYTV PREMIUM</div>
-            </div>
+            <div class="app-name">PLAYTV PREMIUM</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0/1.PLAY.TV.PREMIUM.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 4. PUNTO PLAY -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">PUNTO PLAY</div>
-            </div>
+            <div class="app-name">PUNTO PLAY</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.0.1/1.PUNTO.PLAY.CANALES.Y.PACK.FUTBOL.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 5. XTREME TV -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">XTREME TV</div>
-            </div>
+            <div class="app-name">XTREME TV</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/1.6/XTREMETV.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 6. APP EVENTOS -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">APP EVENTOS</div>
-            </div>
+            <div class="app-name">APP EVENTOS</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/v1.1/APP.EVENTOS.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 7. MAGLINK TV -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">MAGLINK TV</div>
-            </div>
+            <div class="app-name">MAGLINK TV</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/1.3/MAGLINKTV.CANALES.Y.EVENTOS.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 8. FLAMA TV -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">FLAMA TV</div>
-            </div>
+            <div class="app-name">FLAMA TV</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/1%2C2/FLAMA.TV.CANALES.Y.EVENTOS.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 9. STREAMFLIX -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">STREAMFLIX</div>
-            </div>
+            <div class="app-name">STREAMFLIX</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/1.5/STREAMFLIX.apk" class="btn-download">Descargar</a>
         </div>
 
         <!-- 10. SMARTUBE -->
         <div class="app-card">
-            <div class="app-info">
-                <div class="app-name">SMARTUBE</div>
-            </div>
+            <div class="app-name">SMARTUBE</div>
             <a href="https://github.com/civitastore/aplicaciones/releases/download/1.4/SMART.TUBE.apk" class="btn-download">Descargar</a>
         </div>
 
